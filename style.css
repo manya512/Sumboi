@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,105 +6,119 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #0a0e0d;
+    /* Deep dark tech background */
+    font-family: 'JetBrains Mono', monospace;
+    padding: 20px;
+    /* Spacing just to showcase the navbar nicely */
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Navbar Wrapper */
+.hud-navbar {
     width: 100%;
-    height: 100vh;
+    background-color: #05110d;
+    /* Subtle dark green/black tint */
+    position: relative;
+    border-bottom: 1px solid rgba(0, 168, 120, 0.1);
+    box-shadow: inset 0 0 20px rgba(0, 255, 150, 0.02);
 }
 
-.counter-box {
-    background: white;
-    border-radius: 20px;
-    padding: 60px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    text-align: center;
+/* Top Bright Teal Border */
+.top-accent-line {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #12cca2 0%, #0fa382 100%);
+    box-shadow: 0 2px 10px rgba(18, 204, 162, 0.3);
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-
-.counter-display {
-    font-size: 120px;
-    font-weight: bold;
-    color: #667eea;
-    margin: 40px 0;
-    font-family: 'Courier New', monospace;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button-group {
+/* Main Container */
+.nav-container {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.btn {
-    padding: 15px 30px;
-    font-size: 24px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-decrease {
-    background-color: #ff6b6b;
-    color: white;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
-.btn-decrease:hover {
-    background-color: #ee5a52;
-    transform: scale(1.1);
-}
-
-.btn-reset {
-    background-color: #4ecdc4;
-    color: white;
-    padding: 15px 40px;
-}
-
-.btn-reset:hover {
-    background-color: #45b9b0;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.3);
-}
-
-.btn-increase {
-    background-color: #51cf66;
-    color: white;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+/* Shared Section Alignment */
+.nav-section {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0;
+    gap: 10px;
 }
 
-.btn-increase:hover {
-    background-color: #40c057;
-    transform: scale(1.1);
+/* Typography & Colors */
+.label {
+    color: #1a604d;
+    /* Muted dark teal */
+    font-weight: 400;
+}
+
+.sub-label {
+    color: #5c7869;
+    /* Muted greenish-gray */
+    font-size: 11px;
+    margin-left: -4px;
+}
+
+.separator {
+    color: #1a604d;
+}
+
+.vertical-divider {
+    color: #14382e;
+    margin: 0 8px;
+}
+
+/* Specialized Text Colors */
+.cyan-text {
+    color: #12cca2;
+    /* Bright UI Cyan/Teal */
+    font-weight: 700;
+}
+
+.muted-cyan-text {
+    color: #129a7c;
+    /* Medium intensity teal */
+}
+
+.yellow-text {
+    color: #ccde40;
+    /* Vibrant neon yellow/green */
+    font-weight: 700;
+}
+
+/* Status Dots & Icons */
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green-dot {
+    background-color: #99eb1e;
+    box-shadow: 0 0 6px #99eb1e;
+}
+
+.icon-timer {
+    font-size: 11px;
+    opacity: 0.6;
+    color: #12cca2;
+    filter: grayscale(1) brightness(1.5);
+    /* Helps blend standard emoji into the theme */
+}
+
+/* Responsive adjustments for smaller displays */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .vertical-divider {
+        display: none;
+    }
 }
