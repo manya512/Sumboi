@@ -40,8 +40,8 @@
 
                 <span class="vertical-divider">|</span>
 
-                <span class="icon-timer">🕒</span>
-                <span class="value muted-cyan-text">09:08</span>
+                <span class="label">SESSION TIME:</span>
+                <span class="value muted-cyan-text" id="sessionTime">00:00:00</span>
             </div>
 
             <div class="nav-section right-section">
@@ -53,13 +53,19 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="counter-box">
+    <div class="problem-card">
+        <div class="card-grid-overlay"></div>
+
+        <div class="card-header">
+            <span class="problem-id">#025 / --</span>
+            <span class="problem-tag">Quadratics &bull; Medium</span>
+        </div>
+
+        <div class="card-content">
             <div class="counter-display" id="counter">0</div>
-            <div class="button-group">
-                <button class="btn btn-decrease" onclick="decreaseCounter()">-</button>
-                <button class="btn btn-reset" onclick="resetCounter()">Reset</button>
-                <button class="btn btn-increase" onclick="increaseCounter()">+</button>
+            <div class="card-button-group">
+                <button class="btn-minus" onclick="decreaseCounter()">−</button>
+                <button class="btn-hit" id="hitButton" onclick="increaseCounter()">Hit!</button>
             </div>
         </div>
     </div>

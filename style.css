@@ -11,6 +11,8 @@ body {
     font-family: 'JetBrains Mono', monospace;
     padding: 20px;
     /* Spacing just to showcase the navbar nicely */
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Navbar Wrapper */
@@ -121,4 +123,156 @@ body {
     .vertical-divider {
         display: none;
     }
+}
+
+/* Container styling for the panel */
+.problem-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    min-width: 350px;
+    background-color: #04100b;
+    border: 1px solid #0d3826;
+    border-radius: 12px;
+    padding: 30px 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(18, 204, 162, 0.03);
+}
+
+/* Sci-fi background grid lines */
+.card-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background-size: 30px 30px;
+    background-image:
+        linear-gradient(to right, #12cca2 1px, transparent 1px),
+        linear-gradient(to bottom, #12cca2 1px, transparent 1px);
+}
+
+/* Header placement inside the card boundary */
+.card-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+/* Left Metadata text color (#025) */
+.problem-id {
+    color: #1a523d;
+    /* Dark muted green */
+}
+
+/* Right Metadata text color (Quadratics) */
+.problem-tag {
+    color: #3b755d;
+    /* Medium slate green */
+}
+
+/* Content area where you can drop your equations and buttons */
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Counter Display inside card */
+.counter-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: #ccde40;
+    text-shadow: 
+        0 0 10px rgba(204, 222, 64, 0.6),
+        0 0 30px rgba(204, 222, 64, 0.25),
+        2px 2px 0px rgba(0, 0, 0, 0.8);
+    letter-spacing: 10px;
+    line-height: 1;
+}
+
+/* Button row */
+.card-button-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Minus button */
+.btn-minus {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #12cca2;
+    background: transparent;
+    border: 2px solid #0d3826;
+    border-radius: 8px;
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(18, 204, 162, 0.1);
+}
+
+.btn-minus:hover {
+    border-color: #12cca2;
+    background: rgba(18, 204, 162, 0.08);
+    box-shadow: 0 0 15px rgba(18, 204, 162, 0.3);
+    transform: scale(1.05);
+}
+
+.btn-minus:active {
+    transform: scale(0.95);
+    background: rgba(18, 204, 162, 0.15);
+}
+
+/* Hit Button */
+.btn-hit {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0a0e0d;
+    background: linear-gradient(135deg, #12cca2, #99eb1e);
+    border: none;
+    border-radius: 8px;
+    padding: 16px 60px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 15px rgba(18, 204, 162, 0.4),
+        0 0 30px rgba(18, 204, 162, 0.15);
+}
+
+.btn-hit:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 20px rgba(18, 204, 162, 0.6),
+        0 0 50px rgba(153, 235, 30, 0.3);
+    background: linear-gradient(135deg, #15e6b6, #aaff22);
+}
+
+.btn-hit:active {
+    transform: scale(0.97);
+    box-shadow:
+        0 0 10px rgba(18, 204, 162, 0.5),
+        inset 0 0 15px rgba(0, 0, 0, 0.2);
 }
