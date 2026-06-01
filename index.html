@@ -1,23 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <div class="counter-box">
-            <h1>Counter</h1>
+
+    <nav class="hud-navbar">
+
+        <div class="nav-container">
+            <div class="nav-section left-section">
+                <span class="label">ROOM</span>
+                <span class="separator">//</span>
+                <span class="value cyan-text">SPRINT-7F2A</span>
+                <span class="status-dot green-dot"></span>
+            </div>
+
+            <div class="nav-section center-section">
+                <span class="label">GLOBAL TOTAL</span>
+                <span class="separator">-</span>
+                <span class="value yellow-text">1,282</span>
+                <span class="sub-label">solved</span>
+
+                <span class="vertical-divider">|</span>
+
+                <span class="status-dot green-dot"></span>
+                <span class="value muted-cyan-text">8 active</span>
+
+                <span class="vertical-divider">|</span>
+
+                <span class="label">SESSION TIME:</span>
+                <span class="value muted-cyan-text" id="sessionTime">00:00:00</span>
+            </div>
+
+            <div class="nav-section right-section">
+                <span class="label">MODE</span>
+                <span class="value yellow-text">SPRINT</span>
+                <span class="vertical-divider">|</span>
+                <span class="value muted-cyan-text">Algebra</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="problem-card">
+        <div class="card-grid-overlay"></div>
+
+        <div class="card-header">
+            <span class="problem-id">#025 / --</span>
+            <span class="problem-tag">Quadratics &bull; Medium</span>
+        </div>
+
+        <div class="card-content">
             <div class="counter-display" id="counter">0</div>
-            <div class="button-group">
-                <button class="btn btn-decrease" onclick="decreaseCounter()">-</button>
-                <button class="btn btn-reset" onclick="resetCounter()">Reset</button>
-                <button class="btn btn-increase" onclick="increaseCounter()">+</button>
+            <div class="card-button-group">
+                <button class="btn-minus" onclick="decreaseCounter()">−</button>
+                <button class="btn-hit" id="hitButton" onclick="increaseCounter()">Hit!</button>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
